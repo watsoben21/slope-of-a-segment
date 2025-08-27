@@ -133,6 +133,14 @@ function checkAnswer(userSaysYes) {
         feedbackDiv.textContent = 'Incorrect.';
         feedbackDiv.style.color = '#d90429';
     }
+    // Plot the point on the graph after answering
+    ctx.beginPath();
+    ctx.arc(mapX(point.x), mapY(point.y), 7, 0, 2 * Math.PI);
+    ctx.fillStyle = POINT_COLOR;
+    ctx.fill();
+    ctx.strokeStyle = '#222';
+    ctx.lineWidth = 2;
+    ctx.stroke();
     setTimeout(newRound, 1200);
 }
 
